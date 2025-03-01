@@ -1,5 +1,14 @@
 import subprocess
 import sys
+
+# Ensure required packages are installed before running the script
+def install_dependencies():
+    dependencies = ["cryptography", "requests"]
+    for package in dependencies:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install_dependencies()
+
 import os
 import requests
 import getpass
