@@ -31,6 +31,7 @@ check_and_install_modules()
 
 # programmet
 import art
+print("github.com/laladaban33")
 
 def get_ip():
     try:
